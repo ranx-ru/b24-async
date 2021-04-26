@@ -1,6 +1,6 @@
 {
   "name": "b24-async",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Async wrapper for BX24 API library",
   "main": "index.js",
   "scripts": {

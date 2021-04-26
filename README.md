@@ -6,6 +6,11 @@
 npm install b24-async
 ```
 
+Requires script of BX24 API library. Include it where you need:
+```
+<script src="//api.bitrix24.com/api/v1/"></script>
+```
+
 ## Usage
 
 ```

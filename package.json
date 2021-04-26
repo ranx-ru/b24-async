@@ -1,0 +1,23 @@
+{
+  "name": "b24-async",
+  "version": "0.1.0",
+  "description": "Async wrapper for BX24 API library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranx-ru/b24-async.git"
+  },
+  "keywords": [
+    "bitrix24",
+    "async"
+  ],
+  "author": "Denis Waleev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ranx-ru/b24-async/issues"
+  },
+  "homepage": "https://github.com/ranx-ru/b24-async#readme"
+}

@@ -1,7 +1,7 @@
-// import BX24 from '@/BX24'
-
 /**
- * Only this file should use B24 API
+ * b24-async library
+ * 
+ * @copyright RANX 2021
  */
 
 async function init () {
@@ -153,6 +153,7 @@ async function selectUser () {
   })
 }
 
+// makes iframe's height as big as possible
 async function rxFixScroll () {
   await init()
   return new Promise((resolve, reject) => {

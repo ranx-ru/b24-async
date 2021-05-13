@@ -3,7 +3,7 @@
 ## Install
 
 ```
-npm install b24-async
+npm install @ranx-ru/b24-async
 ```
 
 Requires script of BX24 API library. Include it where you need:
@@ -14,7 +14,7 @@ Requires script of BX24 API library. Include it where you need:
 ## Usage
 
 ```
-import B24 from 'b24-async'
+import B24 from '@ranx-ru/b24-async'
 
 B24.call(
     'user.get',

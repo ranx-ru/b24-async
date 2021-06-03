@@ -93,7 +93,7 @@ const fuckingKeys = {
   'catalog.product.list': 'products'
 }
 
-async function call (method, params) {
+async function call (method, params, once = false) {
   await init()
   let res = []
   return new Promise((resolve, reject) => {
@@ -113,7 +113,7 @@ async function call (method, params) {
           resData = Object.values(resData)
         }
         res = res.concat(resData)
-        if (result.more()) {
+        if (result.more() && !once) {
           result.next()
         } else {
           resolve(res)

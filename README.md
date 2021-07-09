@@ -47,6 +47,8 @@ install
 installFinish
 getAuth
 getCurrent - wrapper for profile method
+callBind
+callUnbind
 appOptionGet
 appOptionSet
 userOptionGet

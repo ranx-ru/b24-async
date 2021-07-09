@@ -45,6 +45,24 @@ async function getCurrent () {
   })
 }
 
+async function callBind (event, handler, authType = 0) {
+  await init()
+  return new Promise((resolve) => {
+    BX24.callBind(event, handler, authType, res => {
+      resolve(res)
+    })
+  })
+}
+
+async function callUnbind (event, handler, authType = 0) {
+  await init()
+  return new Promise((resolve) => {
+    BX24.callUnbind(event, handler, authType, res => {
+      resolve(res)
+    })
+  })
+}
+
 async function appOptionGet (name) {
   await init()
   return new Promise((resolve, reject) => {
@@ -180,6 +198,8 @@ export default {
   installFinish,
   getAuth,
   getCurrent,
+  callBind,
+  callUnbind,
   appOptionGet,
   appOptionSet,
   userOptionGet,

@@ -1,6 +1,6 @@
 {
   "name": "@ranx-ru/b24-async",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Async wrapper for BX24 API library",
   "main": "index.js",
   "scripts": {

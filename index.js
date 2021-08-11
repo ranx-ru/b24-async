@@ -171,6 +171,16 @@ async function selectUser () {
   })
 }
 
+async function openPath (path) {
+  await init()
+  return new Promise(resolve => {
+    // eslint-disable-next-line no-undef
+    BX24.openPath(path, result => {
+      resolve(result)
+    })
+  })
+}
+
 // makes iframe's height as big as possible
 async function rxFixScroll () {
   await init()
@@ -207,5 +217,6 @@ export default {
   call,
   batch,
   selectUser,
+  openPath,
   rxFixScroll
 }

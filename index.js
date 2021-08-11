@@ -191,7 +191,7 @@ async function rxFixScroll () {
       const protocol = parseInt(q[1]) || 0
       const appSid = q[2] || ''
 
-      const cmd = 'resizeWindow:' + JSON.stringify({ width: '100%', height: window.innerHeight - 3 }) + '::' + appSid
+      const cmd = 'resizeWindow:' + JSON.stringify({ width: '100%', height: window.innerHeight - 5 }) + '::' + appSid
 
       if (domain) {
         parent.postMessage(cmd, 'http' + (protocol ? 's' : '') + '://' + domain)

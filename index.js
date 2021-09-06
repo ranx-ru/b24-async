@@ -111,6 +111,8 @@ const fuckingKeys = {
   'catalog.product.list': 'products'
 }
 
+const needKeys = ['crm.deal.fields']
+
 async function call (method, params, once = false) {
   await init()
   let res = []
@@ -128,6 +130,15 @@ async function call (method, params, once = false) {
           resolve(resData)
         }
         if (typeof resData === 'object' && resData !== null) {
+          if (needKeys.indexOf(method) !== -1) {
+            for (const key in resData) {
+              if (Object.hasOwnProperty.call(resData, key)) {
+                const element = resData[key];
+                element.objKey = key
+              }
+            }
+          }
+          
           resData = Object.values(resData)
         }
         res = res.concat(resData)

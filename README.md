@@ -57,4 +57,5 @@ call - async wrapper for BX24.callMethod()
 batch - async wrapper for BX24.callBatch()
 selectUser
 rxFixScroll - fix for scrolls problem
+sendMessage - communication with parent frame
 ```

@@ -242,5 +242,6 @@ export default {
   batch,
   selectUser,
   openPath,
-  rxFixScroll
+  rxFixScroll,
+  sendMessage
 }

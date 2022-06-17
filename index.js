@@ -195,18 +195,31 @@ async function openPath (path) {
 // makes iframe's height as big as possible
 async function rxFixScroll () {
   await init()
+
+  const cmd = 'resizeWindow'
+  const params = {
+    width: '100%',
+    height: window.innerHeight - 5
+  }
+
+  return sendMessage(cmd, params)
+}
+
+// communication with parent frame utility
+async function sendMessage (cmd, params) {
+  await init()
+
   return new Promise((resolve, reject) => {
-    if (parent !== undefined && parent.postMessage !== undefined) {
-      const q = window.name.split('|')
-      const domain = q[0].replace(/:(80|443)$/, '')
-      const protocol = parseInt(q[1]) || 0
-      const appSid = q[2] || ''
+    const q = window.name.split('|')
+    const domain = q[0].replace(/:(80|443)$/, '')
+    const protocol = parseInt(q[1]) || 0
+    const appSid = q[2] || ''
 
-      const cmd = 'resizeWindow:' + JSON.stringify({ width: '100%', height: window.innerHeight - 5 }) + '::' + appSid
+    if (domain) {
+      cmd += ':' + (!!params ? JSON.stringify(params) : '')
+        + ':' + (!!appSid ? (':' + appSid) : '');
 
-      if (domain) {
-        parent.postMessage(cmd, 'http' + (protocol ? 's' : '') + '://' + domain)
-      }
+      parent.postMessage(cmd, 'http'+(protocol?'s':'')+'://' + domain);
     }
 
     resolve()
